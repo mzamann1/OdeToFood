@@ -1,0 +1,33 @@
+﻿@page
+@model Restaurants.EditModel
+@{
+}
+
+<h2>Editing @Model.Restaurant.Name</h2>
+
+<form method="post">
+	<input type="hidden" value="@Model.Restaurant.Id" asp-for="Restaurant.Id" />
+	<div class="form-group">
+
+		<label class="control-label">Name:</label>
+		<input type="text" asp-for="Restaurant.Name" class="form-control" />
+		<span class="text-danger" asp-validation-for="Restaurant.Name"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label">Location:</label>
+		<input type="text" asp-for="Restaurant.Location" class="form-control" />
+		<span class="text-danger" asp-validation-for="Restaurant.Location"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label">Cuisines:</label>
+		<select asp-for="Restaurant.Cuisine" asp-items="Model.Cuisines" class="form-control"></select>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-sucess" type="submit"> Save</button>
+	</div>
+
+</form>
+
+
