@@ -25,7 +25,7 @@ namespace OdeToFood.Pages.Restaurants
         {
             if (id.HasValue)
             {
-                Restaurant = RestaurantData.GetRestaurantDetail(id.Value);
+                Restaurant = RestaurantData.GetRestaurantById(id.Value);
                 if (Restaurant == null)
                 {
                     return RedirectToPage("../Error");
@@ -58,6 +58,9 @@ namespace OdeToFood.Pages.Restaurants
                 {
                     RestaurantData.AddRestaurant(Restaurant);
                 }
+
+                RestaurantData.Commit();
+                
                 TempData["Message"] = "Restaurant Saved!";
                 return RedirectToPage("./List");
             }

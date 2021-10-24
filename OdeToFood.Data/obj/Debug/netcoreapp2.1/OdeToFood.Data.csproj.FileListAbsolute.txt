@@ -15,3 +15,4 @@ C:\Users\Muhammad Zaman\source\repos\OdeToFood\OdeToFood.Data\bin\Debug\netcorea
 C:\Users\Muhammad Zaman\source\repos\OdeToFood\OdeToFood.Data\obj\Debug\netcoreapp2.1\OdeToFood.Data.genruntimeconfig.cache
 C:\Users\Muhammad Zaman\source\repos\OdeToFood\OdeToFood.Data\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\Users\Muhammad Zaman\source\repos\OdeToFood\OdeToFood.Data\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Muhammad Zaman\source\repos\OdeToFood\OdeToFood.Data\obj\Debug\netcoreapp2.1\OdeToFood.Data.csproj.CopyComplete

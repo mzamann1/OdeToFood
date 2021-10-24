@@ -20,7 +20,7 @@ namespace OdeToFood.Pages.Restaurants
 
         public IActionResult OnGet(int id)
         {
-            Restaurant = restaurantData.GetRestaurantDetail(id);
+            Restaurant = restaurantData.GetRestaurantById(id);
 
             if (Restaurant == null)
             {

@@ -3,7 +3,6 @@
 @{
 }
 <h1>Restaurants</h1>
-@Model.Message
 
 <div class="container">
 
@@ -21,47 +20,63 @@
 		</div>
 
 	</form>
-	<table class="table">
-		<thead>
-		<th> Name</th>
-		<th> Location</th>
-		<th> Cuisine </th>
 
-		</thead>
-		<tbody>
+	@if (Model.Restaurants.Any() == false)
+	{
+																	<label class="form-label">
+																		Sorry No Record Found..
+																	</label>
+	}
+	else
+	{
 
-			@foreach (var rest in Model.Restaurants)
-			{
-				<tr>
-					<td>
-						@rest.Name
-					</td>
-					<td>
-						@rest.Location
-					</td>
-					<td>
-						@rest.Cuisine
-					</td>
-					<td>
-						<a class="btn btn-default" asp-page="./Detail" asp-route-id="@rest.Id">Details</a>
-						<a class="btn btn-success" asp-page="./Edit" asp-route-id="@rest.Id">Edit</a>
-					</td>
+																		<table class="table">
+																		<thead>
+																		<th> Name</th>
+																		<th> Location</th>
+																		<th> Cuisine </th>
 
-				</tr>
-			}
-		</tbody>
-	</table>
+																		</thead>
+
+
+																		<tbody>
+
+				@foreach (var rest in Model.Restaurants)
+				{
+																																				<tr>
+																																					<td>
+							@rest.Name
+																																					</td>
+																																					<td>
+							@rest.Location
+																																					</td>
+																																					<td>
+							@rest.Cuisine
+																																					</td>
+																																					<td>
+																																						<a class="btn btn-default" asp-page="./Detail" asp-route-id="@rest.Id">Details</a>
+																																						<a class="btn btn-success" asp-page="./Edit" asp-route-id="@rest.Id">Edit</a>
+																																						<a class="btn btn-danger" asp-page="./Delete"  asp-route-id="@rest.Id">Delete</a>
+																																					</td>
+
+																																				</tr>
+				}
+																		</tbody>
+																	</table>
+	}
+
+
 
 	<a asp-page="./Edit" class="btn btn-info">Add New</a>
 
 
 	@if (Model.Message != null)
 	{
-		<div class="alert alert-info">
-			<div>
+																		<div class="alert alert-info">
+																			<div>
 				@Model.Message
-			</div>
-		</div>
+																			</div>
+																		</div>
 
 	}
 </div>

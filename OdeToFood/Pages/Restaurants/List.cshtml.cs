@@ -12,14 +12,18 @@ namespace OdeToFood.Pages.Restaurants
     {
 
         [TempData]
-        public string Message {  get; set; }
+        public string Message { get; set; }
+
+
         public readonly IConfiguration Config;
         private readonly IRestaurantData restaurantData;
 
 
-        [BindProperty(SupportsGet =true)]
+        [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
+
+    
 
         public ListModel(IConfiguration config, IRestaurantData restaurantData)
         {
@@ -28,7 +32,12 @@ namespace OdeToFood.Pages.Restaurants
         }
         public void OnGet(string searchTerm)
         {
-            Restaurants = restaurantData.GetRestaurantByName(SearchTerm);
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                Restaurants = restaurantData.GetAll();
+            else
+                Restaurants = restaurantData.GetRestaurantByName(SearchTerm);
+
+            
         }
 
 

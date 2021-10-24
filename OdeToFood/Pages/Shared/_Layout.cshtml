@@ -40,11 +40,15 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        <vc:restaurant-count>
+            
+        </vc:restaurant-count>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - OdeToFood - <a asp-area="" asp-page="/Privacy">Privacy</a>
+           @RenderSection("footer", required:false);
+           &copy; 2020 - OdeToFood - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
