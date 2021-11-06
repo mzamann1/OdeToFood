@@ -23,46 +23,46 @@
 
 	@if (Model.Restaurants.Any() == false)
 	{
-																	<label class="form-label">
-																		Sorry No Record Found..
-																	</label>
+			<label class="form-label">
+				Sorry No Record Found..
+			</label>		
 	}
 	else
 	{
 
-																		<table class="table">
-																		<thead>
-																		<th> Name</th>
-																		<th> Location</th>
-																		<th> Cuisine </th>
+																					<table class="table">
+																					<thead>
+																					<th> Name</th>
+																					<th> Location</th>
+																					<th> Cuisine </th>
 
-																		</thead>
+																					</thead>
 
 
-																		<tbody>
+																					<tbody>
 
 				@foreach (var rest in Model.Restaurants)
 				{
-																																				<tr>
-																																					<td>
+																																										<tr>
+																																											<td>
 							@rest.Name
-																																					</td>
-																																					<td>
+																																											</td>
+																																											<td>
 							@rest.Location
-																																					</td>
-																																					<td>
+																																											</td>
+																																											<td>
 							@rest.Cuisine
-																																					</td>
-																																					<td>
-																																						<a class="btn btn-default" asp-page="./Detail" asp-route-id="@rest.Id">Details</a>
-																																						<a class="btn btn-success" asp-page="./Edit" asp-route-id="@rest.Id">Edit</a>
-																																						<a class="btn btn-danger" asp-page="./Delete"  asp-route-id="@rest.Id">Delete</a>
-																																					</td>
+																																											</td>
+																																											<td>
+																																												<a class="btn btn-default" asp-page="./Detail" asp-route-id="@rest.Id">Details</a>
+																																												<a class="btn btn-success" asp-page="./Edit" asp-route-id="@rest.Id">Edit</a>
+																																												<a class="btn btn-danger" asp-page="./Delete"  asp-route-id="@rest.Id">Delete</a>
+																																											</td>
 
-																																				</tr>
+																																										</tr>
 				}
-																		</tbody>
-																	</table>
+																					</tbody>
+																				</table>
 	}
 
 
@@ -72,11 +72,11 @@
 
 	@if (Model.Message != null)
 	{
-																		<div class="alert alert-info">
-																			<div>
+																					<div class="alert alert-info">
+																						<div>
 				@Model.Message
-																			</div>
-																		</div>
+																						</div>
+																					</div>
 
 	}
 </div>

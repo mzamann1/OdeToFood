@@ -15,6 +15,7 @@ namespace OdeToFood.Pages.Restaurants
         {
             this.restarantdata = restarantdata;
         }
+
         public IActionResult OnGet(int id)
         {
             Restaurant = restarantdata.GetRestaurantById(id);
@@ -22,10 +23,7 @@ namespace OdeToFood.Pages.Restaurants
             {
                 return RedirectToPage("../Error");
             }
-
             return Page();
-
-
         }
 
         public IActionResult OnPost(int id)
@@ -37,6 +35,7 @@ namespace OdeToFood.Pages.Restaurants
             {
                 return RedirectToPage("../Error");
             }
+
             TempData["Message"] = $"{restatuant.Name} deleted!";
             return RedirectToPage("./List");
         }

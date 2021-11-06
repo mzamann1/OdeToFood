@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using OdeToFood.Core;
 using OdeToFood.Data;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace OdeToFood.Pages.Restaurants
@@ -16,6 +15,7 @@ namespace OdeToFood.Pages.Restaurants
 
 
         public readonly IConfiguration Config;
+
         private readonly IRestaurantData restaurantData;
 
 
@@ -23,7 +23,7 @@ namespace OdeToFood.Pages.Restaurants
         public string SearchTerm { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
 
-    
+
 
         public ListModel(IConfiguration config, IRestaurantData restaurantData)
         {
@@ -33,11 +33,13 @@ namespace OdeToFood.Pages.Restaurants
         public void OnGet(string searchTerm)
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
+            {
                 Restaurants = restaurantData.GetAll();
+            }
             else
+            {
                 Restaurants = restaurantData.GetRestaurantByName(SearchTerm);
-
-            
+            }
         }
 
 

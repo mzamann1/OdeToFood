@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace OdeToFood.Data
 {
-    public class InMemoryRestaurantData 
+    public class InMemoryRestaurantData
     {
         List<Restaurant> restaurants;
 
